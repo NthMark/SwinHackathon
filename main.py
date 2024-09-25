@@ -31,8 +31,15 @@ def getstatus(task_id):
     else:
         result = "Running"
     return  result
+@app.route("/api/callApi/<task_id>") # Ném vào redis
+def sendImage(task_id):
+    task  = PCB_defection.AsyncResult(task_id)
+    if task.ready():
+        result = task.result
+    else:
+        result = "Running"
+    return  result
 
 
 
-
-app.run(host="0.0.0.0", port=5005)
+app.run(host="localhost", port=3000)
