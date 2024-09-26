@@ -22,5 +22,12 @@ def PCB_defection(message):
     _, im_arr = cv2.imencode('.jpg', img)  # im_arr: image in Numpy one-dim array format.
     im_bytes = im_arr.tobytes()
     im_b64 = base64.b64encode(im_bytes)
-    return im_b64
+    soloi=10
+    loichitiet='missinghole,missinghole'
+    result={
+        'image_return':im_b64,
+        'No_soloi':soloi,
+        'loi_chi_tiet':loichitiet
+    }
+    return result
     # return json.dumps(x)
