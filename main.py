@@ -30,10 +30,10 @@ def process():
 def getstatus(task_id):
     task  = PCB_defection.AsyncResult(task_id)
     if task.ready():
-        result = task.result
+        result = jsonify(task.result)
     else:
         result = "Running"
-    return  result
+    return  jsonify(result)
 @app.route("/api/callApi/<task_id>") # Send the base64-encoded image as a JSON response
 def sendImage(task_id):
     task  = PCB_defection.AsyncResult(task_id)

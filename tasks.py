@@ -30,4 +30,4 @@ def PCB_defection(message):
         'loi_chi_tiet':loichitiet
     }
     return result
-    # return json.dumps(x)
+    # return json.dumps(x)  
